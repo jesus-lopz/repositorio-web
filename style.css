@@ -3,13 +3,13 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: #38393B; /* gris oscuro */
+  background: #1C1C1C; /* antracita más oscuro */
   color: white;        /* texto blanco */
 }
 
 /* Encabezado y barra de navegación */
 header {
-  background: #263959; /* azul oscuro */
+  background: #2E3B5E; /* azul más brillante */
   color: white;
   padding: 1rem;
   text-align: center;
@@ -19,7 +19,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #263959; /* azul oscuro */
+  background: #2E3B5E; /* azul más brillante */
   padding: 1rem 2rem;
   flex-wrap: wrap;
 }
@@ -27,7 +27,7 @@ header {
 .navbar h1 {
   margin: 0;
   font-size: 1.5rem;
-  color: white;
+  color: #D4AF37; /* dorado brillante para "Mi Portafolio" */
 }
 
 .nav-links {
@@ -39,7 +39,7 @@ header {
 }
 
 .nav-links li a {
-  color: #B69D62; /* dorado */
+  color: #D4AF37; /* dorado brillante */
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
@@ -53,34 +53,34 @@ header {
 .seccion {
   max-width: 800px;
   margin: 2rem auto;
-  background: #263959; /* azul oscuro */
+  background: #2E3B5E; /* azul más brillante */
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.8);
   color: white;
 }
 
 .seccion h2 {
-  color: #B69D62; /* dorado */
-  border-bottom: 2px solid #B69D62;
+  color: #D4AF37; /* dorado brillante */
+  border-bottom: 2px solid #D4AF37;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
 }
 
 /* Tarjetas de proyectos */
 .proyecto {
-  background: #263959; /* azul oscuro */
+  background: #2E3B5E; /* azul más brillante */
   color: white;
   margin: 1rem auto;
   padding: 1rem;
   border-radius: 8px;
   max-width: 600px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.8);
 }
 
 /* Enlaces dentro de tarjetas */
 .proyecto a {
-  color: #B69D62; /* dorado */
+  color: #D4AF37; /* dorado brillante */
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
