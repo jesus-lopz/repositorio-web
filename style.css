@@ -1,33 +1,22 @@
-/* Fondo y texto general */
 body {
+  background: #151618; /* gris oscuro */
+  color: white;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: #1C1C1C; /* antracita más oscuro */
-  color: white;        /* texto blanco */
-}
-
-/* Encabezado y barra de navegación */
-header {
-  background: #2E3B5E; /* azul más brillante */
-  color: white;
-  padding: 1rem;
-  text-align: center;
 }
 
 .navbar {
+  background: #112E50; /* azul */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #2E3B5E; /* azul más brillante */
   padding: 1rem 2rem;
-  flex-wrap: wrap;
 }
 
 .navbar h1 {
+  color: #AA9158; /* dorado */
   margin: 0;
-  font-size: 1.5rem;
-  color: #D4AF37; /* dorado brillante para "Mi Portafolio" */
 }
 
 .nav-links {
@@ -39,7 +28,7 @@ header {
 }
 
 .nav-links li a {
-  color: #D4AF37; /* dorado brillante */
+  color: #AA9158; /* dorado */
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
@@ -49,11 +38,10 @@ header {
   color: white;
 }
 
-/* Secciones principales */
 .seccion {
   max-width: 800px;
   margin: 2rem auto;
-  background: #2E3B5E; /* azul más brillante */
+  background: #112E50; /* azul */
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.8);
@@ -61,15 +49,14 @@ header {
 }
 
 .seccion h2 {
-  color: #D4AF37; /* dorado brillante */
-  border-bottom: 2px solid #D4AF37;
+  color: #AA9158; /* dorado */
+  border-bottom: 2px solid #AA9158;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
 }
 
-/* Tarjetas de proyectos */
 .proyecto {
-  background: #2E3B5E; /* azul más brillante */
+  background: #112E50; /* azul */
   color: white;
   margin: 1rem auto;
   padding: 1rem;
@@ -78,9 +65,8 @@ header {
   box-shadow: 0 2px 5px rgba(0,0,0,0.8);
 }
 
-/* Enlaces dentro de tarjetas */
 .proyecto a {
-  color: #D4AF37; /* dorado brillante */
+  color: #AA9158; /* dorado */
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
@@ -90,7 +76,6 @@ header {
   color: white;
 }
 
-/* Contenedor de repositorio */
 .repositorio {
   max-width: 800px;
   margin: 2rem auto;
