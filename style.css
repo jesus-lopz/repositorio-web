@@ -14,12 +14,23 @@ header {
 }
 
 .proyecto {
-  background: #263959;  /* Fondo azul oscuro para destacar */
+  background: #263959;  /* Fondo azul oscuro */
+  color: white;         /* Texto blanco */
   margin: 1rem auto;
   padding: 1rem;
   border-radius: 8px;
   max-width: 600px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); /* sombra oscura */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.7); /* sombra oscura */
+}
+
+.proyecto a {
+  color: #B69D62;       /* Enlaces dorados */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.proyecto a:hover {
   color: white;
 }
 
@@ -79,4 +90,3 @@ header {
   max-width: 800px;
   margin: 2rem auto;
 }
-
