@@ -1,27 +1,49 @@
-/* Variables de color */
-:root {
-  --color-primario: #263959;
-  --color-secundario: #B69D62;
-  --color-texto: #38393B;
-  --color-fondo: #f9f9f9; /* fondo muy claro para contraste */
-  --color-blanco: #ffffff;
-}
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: var(--color-fondo);
-  color: var(--color-texto);
+  background: #f9f9f9; /* Fondo claro */
+  color: #38393B;      /* Texto gris oscuro */
 }
 
-/* Header y Navbar */
+header {
+  background: #263959; /* Azul oscuro */
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.proyecto {
+  background: white;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 600px;
+  box-shadow: 0 2px 5px rgba(38, 57, 89, 0.1); /* sombra azul suave */
+}
+
+.seccion {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(38, 57, 89, 0.1); /* sombra azul suave */
+}
+
+.seccion h2 {
+  color: #263959;               /* Azul oscuro */
+  border-bottom: 2px solid #B69D62; /* Dorado */
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--color-primario);
-  color: var(--color-blanco);
+  background: #263959; /* Azul oscuro */
+  color: white;
   padding: 1rem 2rem;
   flex-wrap: wrap;
 }
@@ -29,7 +51,7 @@ body {
 .navbar h1 {
   margin: 0;
   font-size: 1.5rem;
-  color: var(--color-blanco);
+  color: white;
 }
 
 .nav-links {
@@ -41,69 +63,12 @@ body {
 }
 
 .nav-links li a {
-  color: var(--color-blanco);
+  color: white;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
 }
 
-.nav-links li a:hover,
-.nav-links li a:focus {
-  color: var(--color-secundario);
-}
-
-/* Secciones generales */
-.seccion {
-  max-width: 800px;
-  margin: 2rem auto;
-  background: var(--color-blanco);
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(38, 57, 89, 0.1);
-  color: var(--color-texto);
-}
-
-.seccion h2 {
-  color: var(--color-primario);
-  border-bottom: 2px solid var(--color-secundario);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-/* Proyectos */
-.proyecto {
-  background: var(--color-blanco);
-  margin: 1rem auto;
-  padding: 1rem;
-  border-radius: 8px;
-  max-width: 600px;
-  box-shadow: 0 2px 5px rgba(38, 57, 89, 0.1);
-  color: var(--color-texto);
-}
-
-.proyecto h2 {
-  color: var(--color-primario);
-}
-
-.proyecto a {
-  color: var(--color-secundario);
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-.proyecto a:hover,
-.proyecto a:focus {
-  color: var(--color-primario);
-}
-
-/* Enlaces de contacto */
-#contacto a {
-  color: var(--color-primario);
-  text-decoration: underline;
-}
-
-#contacto a:hover,
-#contacto a:focus {
-  color: var(--color-secundario);
+.nav-links li a:hover {
+  color: #B69D62; /* Dorado */
 }
