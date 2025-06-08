@@ -7,7 +7,7 @@ body {
 }
 
 .navbar {
-  background: #2E3B5E; /* azul más brillante que el anterior */
+  background: #263959; /* azul inicial */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,7 +41,7 @@ body {
 .seccion {
   max-width: 800px;
   margin: 2rem auto;
-  background: #2E3B5E; /* azul */
+  background: #263959; /* azul inicial */
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.8);
@@ -56,7 +56,7 @@ body {
 }
 
 .proyecto {
-  background: #2E3B5E; /* azul */
+  background: #263959; /* azul inicial */
   color: white;
   margin: 1rem auto;
   padding: 1rem;
