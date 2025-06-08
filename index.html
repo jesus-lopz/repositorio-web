@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mi Portafolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -10,104 +10,99 @@
 
   <header>
     <nav class="navbar">
-      <img src="tu-foto.jpg" alt="Foto de perfil" class="foto-perfil" />
-      <h1>Mi Portafolio</h1>
+      <h1>
+        <img src="tu-foto.jpg" alt="Foto de Jesús" />
+        Mi Portafolio
+      </h1>
       <ul class="nav-links">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#sobre-mi">Sobre mí</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#" data-section="inicio" class="active">Inicio</a></li>
+        <li><a href="#" data-section="sobre-mi">Sobre mí</a></li>
+        <li><a href="#" data-section="contacto">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Bienvenida + proyectos -->
-  <section class="inicio">
-    <p>¡Bienvenido a mi portafolio!</p>
-    <hr />
-  </section>
-
   <main>
-    <section class="repositorio">
+    <!-- Inicio -->
+    <section id="inicio">
+      <p class="bienvenida">Bienvenido a mi portafolio</p>
+      <div class="proyectos-grid">
+        <article class="proyecto">
+          <h3>Ejemplo 1</h3>
+          <p>Descripción sencilla del proyecto 1.</p>
+          <a href="#">Ver en GitHub</a>
+        </article>
 
-      <article class="proyecto">
-        <h2>Ejemplo 1</h2>
-        <hr />
-        <p>Aplicación web sencilla para gestionar tareas.</p>
-        <a href="https://github.com/tuusuario/ejemplo1" target="_blank">Ver en GitHub</a>
-      </article>
+        <article class="proyecto">
+          <h3>Ejemplo 2</h3>
+          <p>Descripción sencilla del proyecto 2.</p>
+          <a href="#">Ver en GitHub</a>
+        </article>
 
-      <article class="proyecto">
-        <h2>Ejemplo 2</h2>
-        <hr />
-        <p>Proyecto de seguimiento de hábitos.</p>
-        <a href="https://github.com/tuusuario/ejemplo2" target="_blank">Ver en GitHub</a>
-      </article>
+        <article class="proyecto">
+          <h3>Ejemplo 3</h3>
+          <p>Descripción sencilla del proyecto 3.</p>
+          <a href="#">Ver en GitHub</a>
+        </article>
 
-      <article class="proyecto">
-        <h2>Ejemplo 3</h2>
-        <hr />
-        <p>Aplicación para gestión de gastos personales.</p>
-        <a href="https://github.com/tuusuario/ejemplo3" target="_blank">Ver en GitHub</a>
-      </article>
-
-      <article class="proyecto">
-        <h2>Próximos proyectos</h2>
-        <hr />
-        <p>¡Muy pronto nuevas ideas y trabajos!</p>
-      </article>
-
+        <article class="proyecto">
+          <h3>Próximamente</h3>
+          <p>Nuevo proyecto en desarrollo.</p>
+        </article>
+      </div>
     </section>
 
-    <section id="sobre-mi">
+    <!-- Sobre mí -->
+    <section id="sobre-mi" class="seccion">
       <h2>Sobre mí</h2>
-      <p>Breve descripción sobre ti, tus habilidades y experiencia.</p>
+      <p>Breve descripción sobre mí.</p>
     </section>
 
-    <section id="contacto">
+    <!-- Contacto -->
+    <section id="contacto" class="seccion">
       <h2>Contacto</h2>
       <p>Puedes contactarme en:</p>
       <ul>
         <li>Email: <a href="mailto:jesus.ejemplo@gmail.com">jesus.ejemplo@gmail.com</a></li>
-        <li>GitHub: <a href="https://github.com/jesus-lopz" target="_blank">github.com/jesus-lopz</a></li>
+        <li>GitHub: <a href="https://github.com/jesus-lopz" target="_blank">https://github.com/jesus-lopz</a></li>
       </ul>
     </section>
   </main>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const secciones = {
-        inicio: document.querySelector(".inicio"),
-        sobreMi: document.getElementById("sobre-mi"),
-        contacto: document.getElementById("contacto"),
-        repositorio: document.querySelector(".repositorio"),
-      };
+    const links = document.querySelectorAll('.nav-links a');
+    const sections = document.querySelectorAll('main > section');
 
-      function mostrarSeccion(seccion) {
-        secciones.inicio.style.display = "none";
-        secciones.sobreMi.style.display = "none";
-        secciones.contacto.style.display = "none";
-        secciones.repositorio.style.display = "none";
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
 
-        if (seccion === "inicio") {
-          secciones.inicio.style.display = "block";
-          secciones.repositorio.style.display = "grid";
-        } else if (seccion === "sobre-mi") {
-          secciones.sobreMi.style.display = "block";
-        } else if (seccion === "contacto") {
-          secciones.contacto.style.display = "block";
-        }
-      }
+        // Eliminar clase active de todos los enlaces
+        links.forEach(l => l.classList.remove('active'));
 
-      mostrarSeccion("inicio");
+        // Poner active en el enlace clicado
+        link.classList.add('active');
 
-      const links = document.querySelectorAll(".nav-links a");
-      links.forEach(link => {
-        link.addEventListener("click", (e) => {
-          e.preventDefault();
-          const target = e.target.getAttribute("href").substring(1);
-          mostrarSeccion(target);
-          history.replaceState(null, null, `#${target}`);
+        const sectionToShow = link.dataset.section;
+
+        sections.forEach(section => {
+          if(section.id === sectionToShow) {
+            section.classList.add('active');
+          } else {
+            section.classList.remove('active');
+          }
         });
+      });
+    });
+
+    // Mostrar solo Inicio al cargar la página
+    window.addEventListener('DOMContentLoaded', () => {
+      sections.forEach(section => {
+        if(section.id === 'inicio') {
+          section.classList.add('active');
+        } else {
+          section.classList.remove('active');
+        }
       });
     });
   </script>
