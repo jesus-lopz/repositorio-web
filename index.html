@@ -2,66 +2,115 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mis Proyectos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mi Portafolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  
+
   <header>
     <nav class="navbar">
-      <img src="tu-foto.jpg" alt="Foto de Jesús" class="foto-perfil" />
+      <img src="tu-foto.jpg" alt="Foto de perfil" class="foto-perfil" />
       <h1>Mi Portafolio</h1>
-    <ul class="nav-links">
-      <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#sobre-mi">Sobre mí</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
     </nav>
   </header>
 
-  <section id="inicio" class="inicio">
-    <h2>Bienvenido a mi portafolio</h2>
-    <hr>
+  <!-- Bienvenida + proyectos -->
+  <section class="inicio">
+    <p>¡Bienvenido a mi portafolio!</p>
+    <hr />
   </section>
 
-  <section id="inicio" class="repositorio">
+  <main>
+    <section class="repositorio">
 
-    <article class="proyecto fade-in">
-      <h2>Ejemplo 1</h2>
-      <hr>
-      <p>Primer proyecto de ejemplo con Angular y Supabase.</p>
-      <a href="https://github.com/jesus-lopz" target="_blank">Ver en GitHub</a>
-    </article>
+      <article class="proyecto">
+        <h2>Ejemplo 1</h2>
+        <hr />
+        <p>Aplicación web sencilla para gestionar tareas.</p>
+        <a href="https://github.com/tuusuario/ejemplo1" target="_blank">Ver en GitHub</a>
+      </article>
 
-    <article class="proyecto fade-in">
-      <h2>Ejemplo 2</h2>
-      <hr>
-      <p>Segundo proyecto de ejemplo con funciones básicas.</p>
-      <a href="https://github.com/jesus-lopz" target="_blank">Ver en GitHub</a>
-    </article>
+      <article class="proyecto">
+        <h2>Ejemplo 2</h2>
+        <hr />
+        <p>Proyecto de seguimiento de hábitos.</p>
+        <a href="https://github.com/tuusuario/ejemplo2" target="_blank">Ver en GitHub</a>
+      </article>
 
-    <article class="proyecto fade-in">
-      <h2>Próximamente...</h2>
-      <hr>
-      <p>Estoy trabajando en nuevos proyectos. ¡Pronto estarán disponibles!</p>
-    </article>
+      <article class="proyecto">
+        <h2>Ejemplo 3</h2>
+        <hr />
+        <p>Aplicación para gestión de gastos personales.</p>
+        <a href="https://github.com/tuusuario/ejemplo3" target="_blank">Ver en GitHub</a>
+      </article>
 
-  </section>
+      <article class="proyecto">
+        <h2>Próximos proyectos</h2>
+        <hr />
+        <p>¡Muy pronto nuevas ideas y trabajos!</p>
+      </article>
 
-  <section id="sobre-mi" class="seccion">
-    <h2>Sobre mí</h2>
-    <p>Breve descripción.</p>
-  </section>
+    </section>
 
-  <section id="contacto" class="seccion">
-    <h2>Contacto</h2>
-    <ul>
-      <li>Email: <a href="mailto:jesus.ejemplo@gmail.com">jesus.ejemplo@gmail.com</a></li>
-      <li>GitHub: <a href="https://github.com/jesus-lopz" target="_blank">https://github.com/jesus-lopz</a></li>
-    </ul>
-  </section>
+    <section id="sobre-mi">
+      <h2>Sobre mí</h2>
+      <p>Breve descripción sobre ti, tus habilidades y experiencia.</p>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p>Puedes contactarme en:</p>
+      <ul>
+        <li>Email: <a href="mailto:jesus.ejemplo@gmail.com">jesus.ejemplo@gmail.com</a></li>
+        <li>GitHub: <a href="https://github.com/jesus-lopz" target="_blank">github.com/jesus-lopz</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const secciones = {
+        inicio: document.querySelector(".inicio"),
+        sobreMi: document.getElementById("sobre-mi"),
+        contacto: document.getElementById("contacto"),
+        repositorio: document.querySelector(".repositorio"),
+      };
+
+      function mostrarSeccion(seccion) {
+        secciones.inicio.style.display = "none";
+        secciones.sobreMi.style.display = "none";
+        secciones.contacto.style.display = "none";
+        secciones.repositorio.style.display = "none";
+
+        if (seccion === "inicio") {
+          secciones.inicio.style.display = "block";
+          secciones.repositorio.style.display = "grid";
+        } else if (seccion === "sobre-mi") {
+          secciones.sobreMi.style.display = "block";
+        } else if (seccion === "contacto") {
+          secciones.contacto.style.display = "block";
+        }
+      }
+
+      mostrarSeccion("inicio");
+
+      const links = document.querySelectorAll(".nav-links a");
+      links.forEach(link => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const target = e.target.getAttribute("href").substring(1);
+          mostrarSeccion(target);
+          history.replaceState(null, null, `#${target}`);
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>
