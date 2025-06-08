@@ -21,3 +21,18 @@ header {
   max-width: 600px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+.seccion {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.seccion h2 {
+  color: #222;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
