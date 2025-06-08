@@ -2,8 +2,8 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: #f9f9f9; /* Fondo claro */
-  color: #38393B;      /* Texto gris oscuro */
+  background: #38393B;   /* Fondo gris oscuro */
+  color: white;          /* Texto blanco */
 }
 
 header {
@@ -14,25 +14,27 @@ header {
 }
 
 .proyecto {
-  background: white;
+  background: #263959;  /* Fondo azul oscuro para destacar */
   margin: 1rem auto;
   padding: 1rem;
   border-radius: 8px;
   max-width: 600px;
-  box-shadow: 0 2px 5px rgba(38, 57, 89, 0.1); /* sombra azul suave */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); /* sombra oscura */
+  color: white;
 }
 
 .seccion {
   max-width: 800px;
   margin: 2rem auto;
-  background: white;
+  background: #263959; /* Azul oscuro */
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(38, 57, 89, 0.1); /* sombra azul suave */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+  color: white;
 }
 
 .seccion h2 {
-  color: #263959;               /* Azul oscuro */
+  color: #B69D62;               /* Dorado para títulos */
   border-bottom: 2px solid #B69D62; /* Dorado */
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
@@ -63,14 +65,14 @@ header {
 }
 
 .nav-links li a {
-  color: white;
+  color: #B69D62; /* Dorado */
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
 }
 
 .nav-links li a:hover {
-  color: #B69D62; /* Dorado */
+  color: white;
 }
 
 .repositorio {
