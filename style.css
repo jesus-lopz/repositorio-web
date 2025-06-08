@@ -14,6 +14,20 @@ body {
   padding: 1rem 2rem;
 }
 
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* círculo */
+  border: 3px solid #AA9158; /* marco dorado */
+  object-fit: cover;
+}
+
 .navbar h1 {
   color: #AA9158; /* dorado */
   margin: 0;
