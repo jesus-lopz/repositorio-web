@@ -144,6 +144,19 @@ main > section.active {
 }
 
 /* Sección Sobre mí y Contacto */
+.seccion {
+  background-color: #263959;
+  border-radius: 6px;
+  padding: 2rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.seccion:hover {
+  transform: translateY(-5px);
+}
+
 .seccion h2 {
   color: #AA9158;
   border-bottom: 2px solid #AA9158;
