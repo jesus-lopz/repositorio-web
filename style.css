@@ -72,3 +72,8 @@ header {
 .nav-links li a:hover {
   color: #B69D62; /* Dorado */
 }
+
+.repositorio {
+  max-width: 800px;
+  margin: 2rem auto;
+}
