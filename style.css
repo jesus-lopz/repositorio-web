@@ -1,13 +1,11 @@
-/* Reset y base */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: #121214; /* Gris más oscuro */
+  background: #121214;
   color: white;
 }
 
-/* Navbar */
 .navbar {
   display: flex;
   align-items: center;
@@ -52,7 +50,6 @@ body {
   color: #AA9158;
 }
 
-/* Sección bienvenida */
 .inicio {
   max-width: 800px;
   margin: 2rem auto 1rem auto;
@@ -70,7 +67,6 @@ body {
   margin: 0.5rem auto 0 auto;
 }
 
-/* Proyectos */
 .repositorio {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -119,10 +115,8 @@ body {
   color: #AA9158;
 }
 
-/* Secciones sobre-mi y contacto ocultas por defecto */
 #sobre-mi,
 #contacto {
-  display: none;
   max-width: 800px;
   margin: 2rem auto;
   background: #263959;
@@ -132,29 +126,9 @@ body {
   color: white;
 }
 
-/* Mostrar solo la sección que está en el hash (target) */
-#sobre-mi:target {
-  display: block;
-}
-
-#contacto:target {
-  display: block;
-}
-
-/* Cuando no hay hash o hash es #inicio, ocultamos ambas secciones */
-body:not(:target) #sobre-mi,
-body:not(:target) #contacto {
-  display: none;
-}
-
-/* Animación simple */
-.fade-in {
-  animation: fadeIn 0.7s ease-in forwards;
-  opacity: 0;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
+/* Responsive */
+@media (max-width: 600px) {
+  .repositorio {
+    grid-template-columns: 1fr;
   }
 }
