@@ -3,7 +3,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: #38393B;
+  background: #121214; /* Gris más oscuro */
   color: white;
 }
 
@@ -119,8 +119,9 @@ body {
   color: #AA9158;
 }
 
-/* Secciones ocultas por defecto */
-#sobre-mi, #contacto {
+/* Secciones sobre-mi y contacto ocultas por defecto */
+#sobre-mi,
+#contacto {
   display: none;
   max-width: 800px;
   margin: 2rem auto;
@@ -131,9 +132,19 @@ body {
   color: white;
 }
 
-/* Mostrar secciones al hacer click en el menú */
-#sobre-mi:target, #contacto:target {
+/* Mostrar solo la sección que está en el hash (target) */
+#sobre-mi:target {
   display: block;
+}
+
+#contacto:target {
+  display: block;
+}
+
+/* Cuando no hay hash o hash es #inicio, ocultamos ambas secciones */
+body:not(:target) #sobre-mi,
+body:not(:target) #contacto {
+  display: none;
 }
 
 /* Animación simple */
