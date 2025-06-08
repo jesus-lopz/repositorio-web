@@ -1,192 +1,149 @@
-/* Colores */
-:root {
-  --fondo: #151618;
-  --azul: #263959;
-  --dorado: #AA9158;
-  --blanco: #ffffff;
-}
-
+/* Reset y base */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: var(--fondo);
-  color: var(--blanco);
+  background: #38393B;
+  color: white;
 }
 
-header {
-  background: var(--azul);
-  color: var(--dorado);
-  padding: 1rem 2rem;
-  text-align: center;
-}
-
+/* Navbar */
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  background: #263959;
+  color: white;
+  padding: 1rem 2rem;
   flex-wrap: wrap;
-}
-
-.navbar h1 {
-  font-size: 1.8rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .foto-perfil {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
+  border: 3px solid #AA9158;
   object-fit: cover;
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #AA9158;
+  flex-grow: 1;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
   gap: 1rem;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 .nav-links li a {
-  color: var(--blanco);
+  color: white;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
 }
 
 .nav-links li a:hover {
-  color: var(--dorado);
+  color: #AA9158;
 }
 
+/* Sección bienvenida */
 .inicio {
+  max-width: 800px;
+  margin: 2rem auto 1rem auto;
+  color: #AA9158;
   text-align: center;
-  padding: 4rem 1rem 2rem;
-  background: var(--fondo);
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
-.inicio h2 {
-  color: var(--dorado);
-  font-size: 2rem;
-  margin: 0;
+.inicio hr {
+  border: none;
+  height: 2px;
+  background-color: #AA9158;
+  width: 100px;
+  margin: 0.5rem auto 0 auto;
 }
 
+/* Proyectos */
 .repositorio {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: auto;
+  gap: 20px;
+  max-width: 800px;
+  margin: 1rem auto 3rem auto;
 }
 
 .proyecto {
-  background: var(--azul);
+  background: #263959;
   padding: 1.5rem;
-  border-radius: 10px;
-  text-align: left;
-  transition: transform 0.3s;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
 }
 
 .proyecto h2 {
-  color: var(--dorado);
+  color: #AA9158;
   margin-top: 0;
-  margin-bottom: 0.5rem;
 }
 
 .proyecto hr {
   border: none;
-  border-bottom: 2px solid var(--dorado);
-  margin: 0.5rem 0 1rem;
+  height: 2px;
+  background-color: #AA9158;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.proyecto p {
+  flex-grow: 1;
 }
 
 .proyecto a {
-  color: var(--blanco);
+  color: white;
   text-decoration: none;
   font-weight: bold;
+  align-self: flex-start;
   margin-top: 1rem;
-  display: inline-block;
   transition: color 0.3s;
 }
 
 .proyecto a:hover {
-  color: var(--dorado);
+  color: #AA9158;
 }
 
-.seccion {
+/* Secciones ocultas por defecto */
+#sobre-mi, #contacto {
+  display: none;
   max-width: 800px;
-  margin: 4rem auto;
-  background: var(--azul);
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  margin: 2rem auto;
+  background: #263959;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  color: white;
 }
 
-.seccion h2 {
-  color: var(--dorado);
-  border-bottom: 2px solid var(--dorado);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
+/* Mostrar secciones al hacer click en el menú */
+#sobre-mi:target, #contacto:target {
+  display: block;
 }
 
-.seccion a {
-  color: var(--blanco);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.seccion a:hover {
-  color: var(--dorado);
-}
-
-/* Animación */
+/* Animación simple */
 .fade-in {
+  animation: fadeIn 0.7s ease-in forwards;
   opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 0.8s ease-out forwards;
 }
 
 @keyframes fadeIn {
   to {
     opacity: 1;
-    transform: translateY(0);
   }
-}
-
-/* Responsive ajustes extra */
-@media (max-width: 600px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .navbar h1 {
-    justify-content: center;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .proyecto {
-    padding: 1rem;
-  }
-}
-.foto-perfil {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 10px;
-  vertical-align: middle;
-  border: 3px solid #AA9158; /* marco dorado redondo */
-  box-sizing: border-box; /* para que el borde no cambie el tamaño */
 }
