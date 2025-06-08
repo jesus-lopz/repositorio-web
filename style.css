@@ -1,106 +1,182 @@
+/* Colores */
+:root {
+  --fondo: #151618;
+  --azul: #263959;
+  --dorado: #AA9158;
+  --blanco: #ffffff;
+}
+
 body {
-  background: #151618; /* gris oscuro */
-  color: white;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background: var(--fondo);
+  color: var(--blanco);
+}
+
+header {
+  background: var(--azul);
+  color: var(--dorado);
+  padding: 1rem 2rem;
+  text-align: center;
 }
 
 .navbar {
-  background: #263959; /* azul inicial */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-}
-
-.logo-title {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.logo {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%; /* círculo */
-  border: 3px solid #AA9158; /* marco dorado */
-  object-fit: cover;
+  flex-wrap: wrap;
 }
 
 .navbar h1 {
-  color: #AA9158; /* dorado */
-  margin: 0;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.foto-perfil {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
   gap: 1rem;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 .nav-links li a {
-  color: #AA9158; /* dorado */
+  color: var(--blanco);
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
 }
 
 .nav-links li a:hover {
-  color: white;
+  color: var(--dorado);
 }
 
-.seccion {
-  max-width: 800px;
-  margin: 2rem auto;
-  background: #263959; /* azul inicial */
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.8);
-  color: white;
+.inicio {
+  text-align: center;
+  padding: 4rem 1rem 2rem;
+  background: var(--fondo);
 }
 
-.seccion h2 {
-  color: #AA9158; /* dorado */
-  border-bottom: 2px solid #AA9158;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
+.inicio h2 {
+  color: var(--dorado);
+  font-size: 2rem;
+  margin: 0;
+}
+
+.repositorio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .proyecto {
-  background: #263959; /* azul inicial */
-  color: white;
-  margin: 1rem auto;
-  padding: 1rem;
-  border-radius: 8px;
-  max-width: 600px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.8);
+  background: var(--azul);
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: left;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.proyecto h2 {
+  color: var(--dorado);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.proyecto hr {
+  border: none;
+  border-bottom: 2px solid var(--dorado);
+  margin: 0.5rem 0 1rem;
 }
 
 .proyecto a {
-  color: #AA9158; /* dorado */
+  color: var(--blanco);
   text-decoration: none;
   font-weight: bold;
+  margin-top: 1rem;
+  display: inline-block;
   transition: color 0.3s;
 }
 
 .proyecto a:hover {
-  color: white;
+  color: var(--dorado);
 }
 
-.repositorio {
+.seccion {
   max-width: 800px;
-  margin: 2rem auto;
+  margin: 4rem auto;
+  background: var(--azul);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-/* Cambiar enlaces en sección contacto */
-#contacto a {
-  color: white;
-  text-decoration: underline;
+.seccion h2 {
+  color: var(--dorado);
+  border-bottom: 2px solid var(--dorado);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-#contacto a:hover {
-  color: #AA9158; /* dorado */
+.seccion a {
+  color: var(--blanco);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.seccion a:hover {
+  color: var(--dorado);
+}
+
+/* Animación */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive ajustes extra */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .navbar h1 {
+    justify-content: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .proyecto {
+    padding: 1rem;
+  }
 }
