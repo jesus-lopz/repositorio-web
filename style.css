@@ -80,3 +80,13 @@ body {
   max-width: 800px;
   margin: 2rem auto;
 }
+
+/* Cambiar enlaces en sección contacto */
+#contacto a {
+  color: white;
+  text-decoration: underline;
+}
+
+#contacto a:hover {
+  color: #AA9158; /* dorado */
+}
