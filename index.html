@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jesús López</title>
+  <title>Mi Portafolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -12,7 +12,7 @@
     <nav class="navbar">
       <h1>
         <img src="tu-foto.jpg" alt="Foto de Jesús" />
-        Jesús López
+        Mi Portafolio
       </h1>
       <ul class="nav-links">
         <li><a href="#" data-section="inicio" class="active">Inicio</a></li>
@@ -24,7 +24,7 @@
 
   <main>
     <!-- Inicio -->
-    <section id="inicio">
+    <section id="inicio" class="active">
       <p class="bienvenida">Bienvenido a mi portafolio</p>
       <div class="proyectos-grid">
         <article class="proyecto">
@@ -77,14 +77,14 @@
       link.addEventListener('click', e => {
         e.preventDefault();
 
-        // Eliminar clase active de todos los enlaces
+        // Quitar active a todos los enlaces
         links.forEach(l => l.classList.remove('active'));
-
-        // Poner active en el enlace clicado
+        // Añadir active al clicado
         link.classList.add('active');
 
         const sectionToShow = link.dataset.section;
 
+        // Mostrar solo la sección seleccionada
         sections.forEach(section => {
           if(section.id === sectionToShow) {
             section.classList.add('active');
@@ -92,17 +92,6 @@
             section.classList.remove('active');
           }
         });
-      });
-    });
-
-    // Mostrar solo Inicio al cargar la página
-    window.addEventListener('DOMContentLoaded', () => {
-      sections.forEach(section => {
-        if(section.id === 'inicio') {
-          section.classList.add('active');
-        } else {
-          section.classList.remove('active');
-        }
       });
     });
   </script>
