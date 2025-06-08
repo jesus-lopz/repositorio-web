@@ -1,3 +1,2 @@
 # repositorio-web
-En proceso
-Mi portafolio web de proyectos e información profesional.
+*EN PROCESO*  Mi portafolio web de proyectos e información profesional.
